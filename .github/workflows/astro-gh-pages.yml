@@ -35,7 +35,7 @@ jobs:
       - name: Build site with Astro
         run: |
           pnpm i
-          pnpm build
+          BASE_PATH=/nikmolnar.com pnpm build
           mv dist _site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
