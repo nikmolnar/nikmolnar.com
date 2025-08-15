@@ -1,0 +1,42 @@
+---
+import '../styles/global.css'
+import Header from './Header.astro'
+import Footer from './Footer.astro'
+
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{(title ? `${title} -- ` : '') + 'nikmolnar.com'}</title>
+	</head>
+
+	<body class="bg-white dark:bg-teal-950 text-black dark:text-stone-50">
+		<div class="w-full flex justify-center">
+			<div class="w-full lg:max-w-3xl">
+				<Header />
+				<main class="p-4">
+					<slot />
+				</main>
+				<Footer />
+			</div>
+		</div>
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		font-family:
+			Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial,
+			sans-serif;
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+</style>
